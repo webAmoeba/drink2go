@@ -1,0 +1,174 @@
+.custom-inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+
+  &--checkbox {
+    row-gap: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    row-gap: 20px;
+  }
+}
+
+.custom-inputs__default-radio,
+.custom-inputs__default-checkbox {
+  position: absolute;
+  appearance: none;
+
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+
+//////////////////////////////////                                                                                 КАСТОМНЫЕ РАДИО И ЧЕКБОКСЫ В СТОКЕ (НАЧАЛО)
+.custom-inputs__custom-radio,
+.custom-inputs__custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $color-placeholder;
+  border-radius: 50%;
+  background-color: $background-color-main;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.custom-inputs__custom-checkbox {
+  position: relative;
+  width: 42px;
+  border-radius: 12px;
+  background-color: $color-placeholder;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: $background-color-main;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    border-radius: 50%;
+  }
+}
+
+//////////////////////////////////                                                                                 КАСТОМНЫЕ РАДИО И ЧЕКБОКСЫ В СТОКЕ (КОНЕЦ)
+
+
+//////////////////////////////////                                                                                 CHECKED (НАЧАЛО)
+.custom-inputs__default-radio:checked ~ .custom-inputs__custom-radio {
+  position: relative;
+  border-color: $color-base-primary;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: $color-base-primary;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.custom-inputs__default-checkbox:checked ~ .custom-inputs__custom-checkbox {
+  background-color: $color-base-primary-lighter;
+  border-color: $color-base-primary;
+
+  &::before {
+    left: unset;
+    right: 0;
+  }
+}
+
+//////////////////////////////////                                                                                 CHECKED (КОНЕЦ)
+
+
+.custom-inputs__label-text {
+  margin-left: 10px;
+}
+
+
+.custom-inputs__label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+//////////////////////////////////                                                                                 H O V E R        F O C U S        (НАЧАЛО)
+.custom-inputs__default-radio:hover ~ .custom-inputs__custom-radio,
+.custom-inputs__default-radio:focus-visible ~ .custom-inputs__custom-radio {
+  border: $primary-darker solid 2px;
+  outline: 0;
+
+  &::before {
+    background-color: rgba($color-base-primary, 0.25);
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+
+.custom-inputs__default-checkbox:hover ~ .custom-inputs__custom-checkbox,
+.custom-inputs__default-checkbox:focus-visible ~ .custom-inputs__custom-checkbox {
+  border: $primary-darker solid 2px;
+  outline: 0;
+  background-color: rgba($color-base-primary-lighter, 0.25);
+}
+
+//////////////////////////////////                                                                                 H O V E R        F O C U S        (конец)
+
+
+//////////////////////////////////                                                                                 D I S A B L E D        (НАЧАЛО)
+.custom-inputs__default-radio:disabled ~ .custom-inputs__custom-radio {
+  outline: none;
+  background-color: transparent;
+  border: $color-disabled solid 2px;
+
+  &::before {
+    background-color: transparent;
+  }
+}
+
+.custom-inputs__default-radio:disabled ~ .custom-inputs__label-text {
+  color: $color-placeholder;
+}
+
+.custom-inputs__default-radio:checked:disabled ~ .custom-inputs__custom-radio {
+  &::before {
+    background-color: $color-disabled;
+  }
+}
+
+.custom-inputs__default-checkbox:disabled ~ .custom-inputs__custom-checkbox {
+  outline: none;
+  background-color: $color-disabled;
+  border: $color-disabled solid 2px;
+}
+
+.custom-inputs__default-checkbox:disabled ~ .custom-inputs__label-text {
+  color: $color-placeholder;
+}
+
+.custom-inputs__default-checkbox:checked:disabled ~ .custom-inputs__custom-checkbox {
+  outline: none;
+  background-color: $color-disabled;
+
+  &::before {
+    background-color: $color-placeholder;
+  }
+}
+
+//////////////////////////////////                                                                                 D I S A B L E D        (КОНЕЦ)

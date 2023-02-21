@@ -1,0 +1,121 @@
+.product-card {
+  background-color: $background-color-main;
+  border-radius: 4px;
+  padding: 40px 20px 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px;
+    padding-top: 50px;
+    min-width: 348px;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 348px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 316px;
+  }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+.product-card__link {
+  display: flex;
+  flex-direction: column;
+
+  &:focus-within {
+    outline: none;
+  }
+}
+
+.product-card__picture {
+  align-self: center;
+  line-height: 0;
+}
+
+.product-card__img {
+  height: 188px;
+}
+
+.product-card__name {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.product-card__descripion {
+  margin: 0;
+  margin-top: 4px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 10px;
+  }
+}
+
+.product-card__price-and-button {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 20px;
+  }
+}
+
+.product-card__price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.product-card__add-to-shop-cart {
+  border: none;
+  border-radius: 4px;
+  min-height: 36px;
+  min-width: 140px;
+  background-color: $color-base-primary;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $background-color-main;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    margin-right: 6px;
+    content: "";
+    width: 20px;
+    height: 16px;
+    background-image: url("../img/icons/Union.svg");
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    background-color: $color-base-primary-lighter;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $color-placeholder;
+  }
+}

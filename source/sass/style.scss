@@ -1,0 +1,23 @@
+@import "variables";
+@import "fonts";
+@import "global";
+@import "mixins";
+
+// blocks
+@import "blocks/container-main";
+@import "blocks/main-header";
+@import "blocks/main-footer";
+@import "blocks/promo";
+@import "blocks/advantages";
+@import "blocks/catalog";
+@import "blocks/section-header";
+@import "blocks/form";
+@import "blocks/inputs-group";
+@import "blocks/custom-inputs";
+@import "blocks/products";
+@import "blocks/product-card";
+@import "blocks/pagination";
+@import "blocks/map";
+
+// libraries
+@import "libraries/custom-select";

@@ -1,0 +1,44 @@
+.catalog {
+  background-color: $background-color-second;
+  padding-top: 50px;
+  padding-bottom: 44px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.catalog__form {
+  margin-top: 20px;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+}
+
+.catalog__products {
+  margin-top: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: -4px;
+  }
+}
+
+.catalog__desktop-grid {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 318px 1fr;
+    gap: 30px;
+    margin-top: 42px;
+  }
+}
